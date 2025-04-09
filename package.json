@@ -4,12 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://bryok-droid.github.io/React-App",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "rm -rf dist && npm run build",
+    "deploy": "gh-pages -d dist --dotfiles -b gh-pages",
+    "clean-deploy": "npm run predeploy && npm run deploy"
   },
   "dependencies": {
     "framer-motion": "^12.6.3",
@@ -18,18 +24,18 @@
     "react-router-dom": "^7.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
+    "@eslint/js": "^9.24.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.0.2",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.21.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "gh-pages": "^6.1.2",
+    "gh-pages": "^7.0.0",
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^3.2.7",
-    "vite": "^6.2.5"
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.2.8"
   }
 }
